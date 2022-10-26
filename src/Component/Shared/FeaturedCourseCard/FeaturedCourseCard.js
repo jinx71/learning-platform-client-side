@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
 const FeaturedCourseCard = ({ course }) => {
-    console.log(course.courseTitle)
+    // console.log(course.courseTitle)
+    const location = useLocation()
+    console.log(location)
     const { courseTitle, category, price, language, reviews, thumbnail } = course
     return (
         <div className="card w-96 mx-auto border border-2 border-gray-300 dark:border-gray-800 shadow-xl">
@@ -16,7 +19,9 @@ const FeaturedCourseCard = ({ course }) => {
                     <div className="badge badge-outline">{price} USD</div>
                     <div className="badge badge-outline">{language}</div>
                 </div>
-                <button className="btn btn-primary">Buy Now</button>
+                {
+                    location.pathname === '/home' ? <button className="btn btn-primary">Buy Now</button> : <Link to={`/courses/${course.CourseID}`} className="btn btn-primary">View Details</Link>
+                }
             </div>
         </div>
     );
