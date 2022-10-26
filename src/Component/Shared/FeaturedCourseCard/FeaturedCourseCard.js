@@ -16,6 +16,7 @@ const FeaturedCourseCard = ({ course }) => {
                     <div className="badge badge-outline">{price} USD</div>
                     <div className="badge badge-outline">{language}</div>
                 </div>
+                <button className="btn btn-primary">Buy Now</button>
             </div>
         </div>
     );
