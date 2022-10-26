@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 const Navigation = () => {
@@ -9,41 +10,47 @@ const Navigation = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52  border border-2">
+                        <Link to="/home" className='mt-2 w-100 btn btn-ghost'>Home</Link>
                         <li tabIndex={0}>
-                            <a className="justify-between">
-                                Parent
+                            <Link to="/courses" className='btn btn-ghost'>
+                                Courses
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                            </Link>
+                            <ul className="p-2 border border-2 w-52 ml-2">
+                                <Link to="/courses/1" className='btn btn-ghost'>Php Tutorial</Link>
+                                <Link to="/courses/2" className='btn btn-ghost'>React Tutorial</Link>
                             </ul>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <Link to="/home" className='btn btn-ghost'>Blog</Link>
+                        <Link to="/faq" className='btn btn-ghost'>FAQ</Link>
+                        <Link to="/login" className='btn btn-ghost'>Login</Link>
+                        <Link to="/signup" className='btn btn-ghost'>Signup</Link>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <p className="btn btn-ghost normal-case text-xl">Digital Cloud</p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li><a>Item 1</a></li>
+                    <Link to="/home" className='mr-4 btn btn-ghost'>Home</Link>
                     <li tabIndex={0}>
-                        <a>
-                            Parent
+                        <Link to="/courses" className='mr-4 btn btn-ghost'>
+                            Courses
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                        </a>
-                        <ul className="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                        </Link>
+                        <ul className="p-2 border border-2 w-52">
+                            <Link to="/courses/1" className=' btn btn-ghost'>Php Tutorial</Link>
+                            <Link to="/courses/2" className='mt-4 btn btn-ghost'>React Tutorial</Link>
                         </ul>
                     </li>
-                    <li><a>Item 3</a></li>
+                    <Link to="/blog" className='mr-4 btn btn-ghost'>Blog</Link>
+                    <Link to="/faq" className='mr-4 btn btn-ghost'>FAQ</Link>
+                    <Link to="/login" className='mr-4 btn btn-ghost'>Login</Link>
+                    <Link to="/signup" className='mr-4 btn btn-ghost'>Signup</Link>
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+
                 <div className="">
                     <ToggleTheme />
                 </div>

@@ -9,8 +9,14 @@ export const router = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
+                path: "/",
+                element: <Home></Home>,
+                loader: ({ params }) => fetch('http://localhost:3001')
+            },
+            {
                 path: "/home",
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: ({ params }) => fetch('http://localhost:3001')
             },
             {
                 path: "/courses",
