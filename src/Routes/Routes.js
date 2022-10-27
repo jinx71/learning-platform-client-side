@@ -4,6 +4,7 @@ import Blog from '../Component/Pages/Blog/Blog';
 import Checkout from '../Component/Pages/Checkout/Checkout';
 import CourseDetails from '../Component/Pages/CourseDetails/CourseDetails';
 import Courses from '../Component/Pages/Courses/Courses';
+import Faq from '../Component/Pages/Faq/Faq';
 import Home from '../Component/Pages/Home/Home';
 import Login from '../Component/Pages/Login/Login';
 import NotFound from '../Component/Pages/NotFound/NotFound';
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/faq",
-                element: <div>This is faq</div>
+                element: <Faq></Faq>
             },
             {
                 path: "/blog",

@@ -8,13 +8,15 @@ import { AuthContext } from '../../../Context/UserContext';
 
 const Signup = () => {
     const [error, setError] = useState(null);
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value
         console.log(email, password)
         // const confirm = form.confirm.value;
 
@@ -29,10 +31,20 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                handleUpdateUserProfile(name, photoURL);
                 form.reset();
             })
             .catch(error => console.error(error));
 
+    }
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL,
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch((e) => console.log(e.message))
     }
     return (
         <div className="hero">
@@ -48,13 +60,13 @@ const Signup = () => {
                                 <label className="label">
                                     <span className="label-text">Fullname</span>
                                 </label>
-                                <input type="text" placeholder="Full Name" className="input input-bordered" />
+                                <input type="text" name="name" placeholder="Full Name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" placeholder="Photo URL" className="input input-bordered" />
+                                <input type="text" name="photoURL" placeholder="Photo URL" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

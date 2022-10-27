@@ -61,7 +61,7 @@ const Navigation = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && user.uid ? <div title={user.displayName}><img src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png" alt="" style={{ width: '25px', height: '25px' }} /></div> : null
+                    user && user.uid ? <div title={user.displayName}><img src={user.photoURL} alt="" style={{ width: '25px', height: '25px' }} /></div> : null
                 }
 
                 <div className="">
