@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/UserContext';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 const Navigation = () => {
+    const { user, signout } = useContext(AuthContext)
     return (
         <div className="navbar bg-white dark:bg-black text-black dark:text-white">
             <div className="navbar-start">
@@ -24,7 +26,11 @@ const Navigation = () => {
                         </li>
                         <Link to="/home" className='btn btn-ghost'>Blog</Link>
                         <Link to="/faq" className='btn btn-ghost'>FAQ</Link>
-                        <Link to="/login" className='btn btn-ghost'>Login</Link>
+                        {
+                            user && user.uid ? <Link className="btn btn-ghost" onClick={signout}>Logout</Link> :
+                                <Link to="/login" className="btn btn-ghost">Login</Link>
+                        }
+
                         <Link to="/signup" className='btn btn-ghost'>Signup</Link>
                     </ul>
                 </div>
@@ -45,7 +51,10 @@ const Navigation = () => {
                     </li>
                     <Link to="/blog" className='mr-4 btn btn-ghost'>Blog</Link>
                     <Link to="/faq" className='mr-4 btn btn-ghost'>FAQ</Link>
-                    <Link to="/login" className='mr-4 btn btn-ghost'>Login</Link>
+                    {
+                        user && user.uid ? <Link className="btn btn-ghost" onClick={signout}>Logout</Link> :
+                            <Link to="/login" className="btn btn-ghost">Login</Link>
+                    }
                     <Link to="/signup" className='mr-4 btn btn-ghost'>Signup</Link>
                 </ul>
             </div>
