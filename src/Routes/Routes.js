@@ -20,28 +20,28 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: ({ params }) => fetch('http://localhost:3001')
+                loader: ({ params }) => fetch('https://digital-cloud-server.vercel.app/')
             },
             {
                 path: "/home",
                 element: <Home></Home>,
-                loader: ({ params }) => fetch('http://localhost:3001')
+                loader: ({ params }) => fetch('https://digital-cloud-server.vercel.app/')
             },
             {
                 path: "/courses",
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch('http://localhost:3001')
+                loader: ({ params }) => fetch('https://digital-cloud-server.vercel.app/')
             },
             {
                 path: "/courses/:id",
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:3001/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://digital-cloud-server.vercel.app/courses/${params.id}`)
 
             },
             {
                 path: "/checkout/:id",
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3001/checkout/${params.id}`)
+                loader: ({ params }) => fetch(`https://digital-cloud-server.vercel.app/checkout/${params.id}`)
 
             },
             {
