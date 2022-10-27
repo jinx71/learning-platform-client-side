@@ -1,3 +1,8 @@
+/*
+ This is Course Details page
+*/
+
+
 import React, { createRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Courses from '../Courses/Courses';

@@ -1,3 +1,8 @@
+/*
+ This is home page
+*/
+
+
 import React from 'react';
 import FeaturedCourses from '../../Shared/FeaturesCourse/FeaturedCourses';
 import Header from '../../Shared/Header/Header';

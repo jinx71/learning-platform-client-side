@@ -1,5 +1,8 @@
-import React from 'react';
+/*
+ This is blog page
+*/
 
+import React from 'react';
 const Blog = () => {
     return (
         <div>

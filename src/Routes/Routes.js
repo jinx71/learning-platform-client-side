@@ -6,6 +6,7 @@ import CourseDetails from '../Component/Pages/CourseDetails/CourseDetails';
 import Courses from '../Component/Pages/Courses/Courses';
 import Home from '../Component/Pages/Home/Home';
 import Login from '../Component/Pages/Login/Login';
+import NotFound from '../Component/Pages/NotFound/NotFound';
 import Signup from '../Component/Pages/Signup/Signup';
 import PrivateRoute from '../Component/Shared/PrivateRoute/PrivateRoute';
 import Main from '../Layout/Main';
@@ -63,6 +64,6 @@ export const router = createBrowserRouter([
     },
     {
         path: "*",
-        element: <div>This is 404</div>
+        element: <NotFound></NotFound>
     },
 ])

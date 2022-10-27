@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+/*
+ This is login page
+*/
+
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UserContext';
 
 const Login = () => {
     const { user, signin, handleGithubSignIn, handleGoogleSignIn } = useContext(AuthContext);
     // console.log(user.displayName)
+    const [error, setError] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location)
@@ -24,7 +29,9 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true })
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error.message)
+            });
     }
 
 
@@ -54,6 +61,9 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     <span className='label-text-alt'> <Link to="/signup" className='link link-hover'>New User? Please signup</Link></span>
                                 </label>
+                            </div>
+                            <div className="label">
+                                <p className='text-red-500 label-text-alt'>{error}</p>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>

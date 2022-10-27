@@ -1,3 +1,8 @@
+/*
+ This is darkmode toggler component
+*/
+
+
 import React from 'react';
 
 const Background = ({ children }) => {
