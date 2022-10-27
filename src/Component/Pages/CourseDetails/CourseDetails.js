@@ -70,7 +70,7 @@ const CourseDetails = () => {
                         </section>
                     </div>
                 </div>
-                <button className='btn btn-primary text-center mx-auto my-10'>Get Premium Access</button>
+                <Link to={`/checkout/${course.CourseID}`} className='btn btn-primary text-center mx-auto my-10'>Get Premium Access</Link>
 
             </div>
         </div>

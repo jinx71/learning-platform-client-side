@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import ReactCardSlider from 'react-card-slider-component';
 import FeaturedCourseCard from '../FeaturedCourseCard/FeaturedCourseCard';
 const FeaturedCourses = () => {
     const courses = useLoaderData();

@@ -7,7 +7,7 @@ const FeaturedCourseCard = ({ course }) => {
     console.log(location)
     const { courseTitle, category, price, language, reviews, thumbnail } = course
     return (
-        <div className="card w-96 mx-auto border border-2 border-gray-300 dark:border-gray-800 shadow-xl">
+        <div className="card w-96 mx-auto border border-gray-300 dark:border-gray-800 shadow-xl">
             <figure><img src={thumbnail} alt="" style={{ width: '100%', height: '300px' }} /></figure>
             <div className="card-body">
                 <h2 className="card-title">
@@ -20,7 +20,7 @@ const FeaturedCourseCard = ({ course }) => {
                     <div className="badge badge-outline">{language}</div>
                 </div>
                 {
-                    location.pathname === '/home' ? <button className="btn btn-primary">Buy Now</button> : <Link to={`/courses/${course.CourseID}`} className="btn btn-primary">View Details</Link>
+                    location.pathname === '/home' ? <Link to={`/checkout/${course.CourseID}`} className="btn btn-primary">Buy Now</Link> : <Link to={`/courses/${course.CourseID}`} className="btn btn-primary">View Details</Link>
                 }
             </div>
         </div>

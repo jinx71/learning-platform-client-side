@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UserContext';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
-
+import logo from '../../../favicon.ico'
 const Navigation = () => {
     const { user, signout } = useContext(AuthContext)
     return (
@@ -34,6 +34,7 @@ const Navigation = () => {
                         <Link to="/signup" className='btn btn-ghost'>Signup</Link>
                     </ul>
                 </div>
+                <span><img src={logo} style={{ width: '65px', height: '65px' }} alt="" /></span>
                 <p className="btn btn-ghost normal-case text-xl">Digital Cloud</p>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -59,6 +60,9 @@ const Navigation = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {
+                    user && user.uid ? <div title={user.displayName}><img src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png" alt="" style={{ width: '25px', height: '25px' }} /></div> : null
+                }
 
                 <div className="">
                     <ToggleTheme />
